@@ -1,0 +1,55 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    height: 100%;
+}
+
+body {
+    text-align: center;
+}
+.space {
+    margin-top: 60px;
+}
+
+.rec {
+    padding-right: 20px;
+}
+
+.des {
+    font-size: 25px;
+}
+
+.co {
+    color:black;
+   
+}
+
+.grand{
+    font-size:30px;
+
+}
+
+.marge{
+    
+    margin-top:50px;
+
+}
+
+.footer {
+   
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+}
+
+.t{
+    font-size:20px;
+}
+
+.main{
+    margin-top:320px;
+}
