@@ -8,7 +8,7 @@ using System.Web;
 /// </summary>
 public class Cart
 {
-    public Item[] ArrItem;
+    public Item[] ArrItem;//un tableau d'article
     public int Size;
     public Cart()
     {
@@ -33,9 +33,9 @@ public class Cart
             {
                 for(int j=i;j<Size-1;j++)
                 {
-                    ArrItem[j] = ArrItem[j + 1];
+                    ArrItem[j] = ArrItem[j + 1];//on decale les produits dans le panier,le j+1 devient j
                 }
-                Size--;
+                Size--;//on diiminue la taille du panier
             }
         }
     }

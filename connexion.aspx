@@ -25,10 +25,11 @@
     </div>
   </div>
 </nav>
-
+    <br /><br />
     <form id="form1" runat="server">
         <div class="main">
-            <h1>WELCOME TO MYSHOP</h1><br />
+            <img src="logo/shop_logo.jpg" height="200px" width="200px"/><br />
+            <br />
             <div class="container">
                 <div class="form-group">
                     <asp:TextBox class="form-control" ID="TxtMail" runat="server" Placeholder="Email"  />
@@ -41,10 +42,12 @@
                  </div>
         
                    <asp:ValidationSummary ID="ValidationSummary1" runat="server" DisplayMode="List"  />
-                   <div ><asp:Button ID="BtnReg" runat="server" Text="Ok" class="btn btn-success" OnClick="BtnReg_Click" /></div><br />
+                   <div ><asp:Button ID="BtnReg" runat="server" Text="Connexion" class="btn btn-success" OnClick="BtnReg_Click" /></div><br />
                    <asp:Literal ID="LtlMsg" runat="server" />
                    <asp:Literal ID="LtlProds" runat="server"></asp:Literal>
+                    <asp:Literal ID="Success" runat="server"></asp:Literal>
                 </div>
+            <br /><br />
             <h2>Not a member yet?</h2>
             <a href='Inscription.aspx' class="btn btn-success">Register now !</a>
         </div>

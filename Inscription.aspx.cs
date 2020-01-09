@@ -16,9 +16,10 @@ public partial class Inscription : System.Web.UI.Page
      
         int telephone = int.Parse(TxtTel.Text);
 
-        string ConnStr = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\users.accdb";// הגדרת מחרוזת שתחזיק את מחרוזת ההתחברות לבסיס הנתונים
 
-        string Sql = "insert into Users(Ufname,Ulname,Ucity,Uemail,Utelephone,Upassword) values ('";
+        string ConnStr = "Provider=SQLOLEDB;Data Source=DESKTOP-SB7PUAD\\SQLEXPRESS;Initial Catalog=Shop;Integrated Security=SSPI";// הגדרת מחרוזת שתחזיק את מחרוזת ההתחברות לבסיס הנתונים
+
+        string Sql = "insert into Users(Ufname,Ulname,Ucity,Uemail,Uphone,Upassword) values ('";
         Sql += TxtFname.Text + "','" + TxtLname.Text + "','" + TxtCity.Text + "','" + TxtMail.Text + "','" + telephone + "','" + TxtPass.Text + "')";
 
 
@@ -33,8 +34,9 @@ public partial class Inscription : System.Web.UI.Page
        
 
         Session["Login"] = TxtFname.Text;
-        LtlMsg.Text = "registration completed ! ";
-        
+        Session["message"] = "registration completed! Please connect ";
+        Response.Redirect("connexion.aspx");
+
 
     }
 }

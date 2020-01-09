@@ -30,8 +30,14 @@ public partial class connexion : System.Web.UI.Page
             }
 
         }
-
-
-
+        
+    }
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (Session["message"] != null)
+        {
+            String message = Session["message"].ToString();
+            Success.Text = message;
+        }
     }
 }

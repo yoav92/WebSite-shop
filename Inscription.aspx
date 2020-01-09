@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="stylesheet" href="/css/design.css" runat="server" />
     <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -43,7 +44,7 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav><br /><br />
-
+ <div class="container">
     <form id="form1" runat="server">
         
         <h1 class="text-center">INSCRIPTION</h1>
@@ -82,7 +83,7 @@
             <div class="form-group">
                 
                 <asp:TextBox class="form-control" ID="TxtPass" runat="server" Placeholder="Password" TextMode="Password"/>
-     	        <asp:RequiredFieldValidator ID="RequiredFieldValidator" runat="server"  Text="*" ErrorMessage="Enter a password" ControlToValidate="TxtPass" />
+     	        <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server"  Text="*" ErrorMessage="Enter a password" ControlToValidate="TxtPass" />
                 <asp:CompareValidator ID="RequiredFieldValidator7" runat="server"  Text="*" ErrorMessage="two passwords are not the same" ControlToValidate="TxtVerif" ControlToCompare="TxtPass"></asp:CompareValidator>
              </div>
             <div class="form-group">
@@ -95,5 +96,6 @@
                <asp:Literal ID="LtlMsg" runat="server" />
             </div>
     </form>
+</div>
 </body>
 </html>

@@ -50,6 +50,6 @@ body {
     font-size:20px;
 }
 
-.main{
-    margin-top:320px;
+#RequiredFieldValidator1, #RequiredFieldValidator2, #RequiredFieldValidator3, #RequiredFieldValidator4, #RequiredFieldValidator5, #RequiredFieldValidator6, #RequiredFieldValidator7, #RequiredFieldValidator8, #RequiredFieldValidator9{
+    color: red;
 }

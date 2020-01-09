@@ -13,6 +13,7 @@ public partial class SysManage_LoginAdmin : System.Web.UI.Page
     }
     protected void BtnLogin_Click(object sender, EventArgs e)
     {
+        string Error = "";
         if (TxtPass.Text == "1" && TxtUser.Text == "1")
         {
             Session["Login"] = "ok";
@@ -21,7 +22,10 @@ public partial class SysManage_LoginAdmin : System.Web.UI.Page
         }
         else
         {
-            LtlMsg.Text = "Name or password not correct,try again";
+            Error = "<span style='color: red; '>Name or password not correct,try again</span>";
+            LtlMsg.Text = Error;
+
+            
         }
     }
 }

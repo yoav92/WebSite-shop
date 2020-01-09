@@ -16,7 +16,7 @@ public partial class SysManage_AddNewProductaspx : System.Web.UI.Page
     protected void BtnSave_Click(object sender, EventArgs e)
     {
 
-        string ConnStr = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\users.accdb";// הגדרת מחרוזת שתחזיק את מחרוזת ההתחברות לבסיס הנתונים
+        string ConnStr = "Provider=SQLOLEDB;Data Source=DESKTOP-SB7PUAD\\SQLEXPRESS;Initial Catalog=Shop;Integrated Security=SSPI";// הגדרת מחרוזת שתחזיק את מחרוזת ההתחברות לבסיס הנתונים
         string FileName = GlobalFunc.GetRandomFileName(6);
         string t1 = UploadPicName.FileName;
         string FullPath = Server.MapPath("/img/");

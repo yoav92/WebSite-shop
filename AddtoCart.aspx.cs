@@ -10,10 +10,10 @@ public partial class AddtoCart : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         
-        int Pid = int.Parse(Request["pid"]);
+        int Pid = int.Parse(Request["pid"]);//recupere l'id du produit
 
         
-        var ArrProd = Application["ArrP"] as List<Product>;
+        var ArrProd = Application["ArrP"] as List<Product>;//recupere tous les produits
 
         
         for (int i=0;i<ArrProd.Count;i++)
@@ -29,7 +29,7 @@ public partial class AddtoCart : System.Web.UI.Page
                 
                 for (int j = 0; j < Cart.Size; j++)
                 {
-                    if (Cart.ArrItem[j].Pid == Pid)
+                    if (Cart.ArrItem[j].Pid == Pid)//si le produit rajoute existe deja dans le panier-->augmenter l'amount
                     {
 
                           Cart.ArrItem[j].Amount = Cart.ArrItem[j].Amount + 1;
@@ -38,7 +38,7 @@ public partial class AddtoCart : System.Web.UI.Page
                     }
                 }
                 
-                Item tmp = new Item(Pid,ArrProd[i].Pname,1, ArrProd[i].Price,ArrProd[i].Picname);
+                Item tmp = new Item(Pid,ArrProd[i].Pname,1, ArrProd[i].Price,ArrProd[i].Picname);//si produit n'existe pas dans le panier,creation article grace a la classe produit
                 Cart.AddtoCart(tmp);
                 Session["Cart"] = Cart;
                 Response.Redirect("ShowMyCart.aspx");

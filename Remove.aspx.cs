@@ -11,10 +11,10 @@ public partial class Remove : System.Web.UI.Page
     {
         int Pid = int.Parse(Request["pid"]);
 
-        // שולפים מהאפליקיישן את מערך המוצרים
+        // recupere le panier
         var Cart = Session["Cart"] as Cart;
 
-        //מאתרים את המוצר עם הקוד שקיבלנו
+        // localise le item grace a l'id
         for (int i = 0; i < Cart.Size; i++)
         {
             if (Cart.ArrItem[i].Pid == Pid)

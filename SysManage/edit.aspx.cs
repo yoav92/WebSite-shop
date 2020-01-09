@@ -26,9 +26,9 @@ public partial class SysManage_edit : System.Web.UI.Page
                 if (ArrProd[i].Pid == Nid)
                 {
 
-                    string ConnStr = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\users.accdb";
+                    string ConnStr = "Provider=SQLOLEDB;Data Source=DESKTOP-SB7PUAD\\SQLEXPRESS;Initial Catalog=Shop;Integrated Security=SSPI";
 
-                    string Sql = "SELECT * FROM Products where Pid=" + Nid + "";
+                    string Sql = "SELECT * FROM Products where Id=" + Nid + "";
 
 
                     OleDbConnection Conn = new OleDbConnection(ConnStr); // creation d'objet de type 'connection'-lien avec base de donnee
@@ -51,7 +51,7 @@ public partial class SysManage_edit : System.Web.UI.Page
 
                         // ArrProd זו רשימה מקושרת של מוצרים
                         // ArrProd.Add הוספת מוצר לרשימה המקושרת של מוצרים
-                        Temp2 = new Product((int)Dr["Pid"], (string)Dr["Pname"], (string)Dr["Description"], (int)Dr["Price"], (string)Dr["Picname"]);
+                        Temp2 = new Product((int)Dr["Id"], (string)Dr["Pname"], (string)Dr["Description"], (int)Dr["Price"], (string)Dr["Picname"]);
                         ArrProd2.Add(Temp2);
 
 
@@ -103,7 +103,7 @@ public partial class SysManage_edit : System.Web.UI.Page
         //string price = Request.Form["price"];
         //string desc = Request.Form["description"];
 
-        string ConnStr = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\users.accdb";// הגדרת מחרוזת שתחזיק את מחרוזת ההתחברות לבסיס הנתונ
+        string ConnStr = "Provider=SQLOLEDB;Data Source=DESKTOP-SB7PUAD\\SQLEXPRESS;Initial Catalog=Shop;Integrated Security=SSPI";// הגדרת מחרוזת שתחזיק את מחרוזת ההתחברות לבסיס הנתונ
 
         foreach (RepeaterItem item in RptProds.Items)
         {
@@ -146,7 +146,7 @@ public partial class SysManage_edit : System.Web.UI.Page
 
 
 
-                    string Sql = "DELETE FROM Products where Pid=" + Nid + "";
+                    string Sql = "DELETE FROM Products where Id=" + Nid + "";
 
 
                     OleDbConnection Conn = new OleDbConnection(ConnStr); // creation d'objet de type 'connection'-lien avec base de donnee
